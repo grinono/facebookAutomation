@@ -1,8 +1,8 @@
 # Facebook automation
 
-- automate sendimg messages with FB Messenger
+- Automate sendimg messages with FB Messenger
 
-- Puppeteer
+- Automate getting group members profile pages with puppeteer to send messages to these group members.
 
 ## Install Instruction
 
