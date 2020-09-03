@@ -1,0 +1,17 @@
+{
+  "name": "puppeteer-messenger-sender",
+  "version": "1.1.0",
+  "description": "Facebook Messenger automate spammer with Puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --trace-warnings index.js",
+    "group": "node --trace-warnings group.js",
+    "dev": "nodemon --trace-warnings index.js"
+  },
+  "author": "Bartel Verkruijssen",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "puppeteer": "^5.2.1"
+  }
+}
