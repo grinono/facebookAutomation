@@ -26,20 +26,29 @@ const PASSWORD = process.env.FACEBOOK_PASSWORD;
 
   console.log("page loded");
   await page.evaluate(async () => {
-    console.log("start scroll");
     await new Promise((resolve, reject) => {
+      var amount = 0;
       var totalHeight = 0;
       var distance = 100;
       var timer = setInterval(() => {
         var scrollHeight = document.body.scrollHeight;
         window.scrollBy(0, distance);
         totalHeight += distance;
-
-        if (totalHeight >= scrollHeight) {
+        amount++;
+        // if (totalHeight >= scrollHeight) {
+        //   clearInterval(timer);
+        //   resolve();
+        // }
+        console.log("amount:", amount);
+        if (amount > 10) {
           clearInterval(timer);
           resolve();
         }
-      }, 1000);
+      }, 300);
     });
   });
+
+  console.log("scrolling done");
+
+  page.evaluate;
 })();

@@ -269,11 +269,6 @@ pump@^3.0.0:
     end-of-stream "^1.1.0"
     once "^1.3.1"
 
-puppeteer-autoscroll-down@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/puppeteer-autoscroll-down/-/puppeteer-autoscroll-down-0.1.6.tgz#db5388ac3c14c9079a63c221265b05b306266e88"
-  integrity sha512-U/hJ5CnVikfq682LmGrUB7Q3ext6oJbVvOfTPay1Uq4AhvaHfA1Q2bf4UE0DT5QgaHrk/EeEZPeDwBHgjw7ZqQ==
-
 puppeteer@^5.2.1:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-5.2.1.tgz#7f0564f0a5384f352a38c8cc42af875cd87f4ea6"
