@@ -1,5 +1,8 @@
+# Node Modules
 node_modules
+
+# Persistent
+database
+
+# Environment Variables
 .env
-
-
-

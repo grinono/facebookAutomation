@@ -1,17 +1,20 @@
 {
   "name": "puppeteer-messenger-sender",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Facebook Messenger automate spammer with Puppeteer",
   "main": "index.js",
   "scripts": {
-    "start": "node --trace-warnings index.js",
-    "group": "node --trace-warnings group.js",
-    "dev": "nodemon --trace-warnings index.js"
+    "message": "node --trace-warnings src/sendMessage.js",
+    "group": "node --trace-warnings src/group.js"
   },
   "author": "Bartel Verkruijssen",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^5.0.1",
-    "puppeteer": "^5.2.1"
+    "nedb": "^1.8.0",
+    "puppeteer": "^5.2.1",
+    "puppeteer-extra": "^3.1.15",
+    "puppeteer-extra-plugin-adblocker": "^2.11.6",
+    "puppeteer-extra-plugin-stealth": "^2.6.1"
   }
 }
