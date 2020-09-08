@@ -2,7 +2,11 @@
 require("dotenv").config();
 
 // User Imports
-const { launchBrowser, launchPage, sendMessage } = require("../handlers/puppeteerHelper");
+const {
+  launchBrowser,
+  launchPage,
+  sendMessage,
+} = require("../handlers/puppeteerHelper");
 const { getRandomInt } = require("../handlers/generalHandler");
 const { findAll } = require("../handlers/databaseHandler");
 
@@ -31,7 +35,7 @@ const INDIVIDUAL_SENT = "https://m.me/110035443798530";
     for (doc of docs) {
       console.log(`[✨] Sending Message To ${doc.name}`);
       await page.goto(doc.me, { waitUntil: "networkidle0" });
-      await sendMessage(page, MESSAGE_TO_SENT);
+      await sendMessage(page, Message(doc.name));
       await page.waitFor(getRandomInt(10000, 20001));
     }
   } else {
@@ -43,3 +47,9 @@ const INDIVIDUAL_SENT = "https://m.me/110035443798530";
   await page.waitFor(getRandomInt(10000, 20001));
   await browser.close();
 })();
+
+const Message = (fullName) => {
+  const firstname = fullName.split(" ")[0];
+  console.log("firstname:", firstname);
+  return `Hi ${firstname}, are you good`;
+};

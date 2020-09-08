@@ -8,13 +8,22 @@ module.exports.handleResponse = async (res) => {
     const resourceType = await req.resourceType();
     const resourceURL = await req.url();
 
-    if (resourceType === "xhr" && resourceURL === "https://www.facebook.com/api/graphql/") {
+    if (
+      resourceType === "xhr" &&
+      resourceURL === "https://www.facebook.com/api/graphql/"
+    ) {
       const json = JSON.parse((await res.buffer()).toString());
+      console.log("json:", json);
 
       if (json.data.hasOwnProperty("node")) {
         let edges = json.data.node.new_members.edges;
+        console.log("edges:", edges);
         edges = edges.map((edge) => {
-          return { id: edge.node.id, name: edge.node.name, me: `https://www.messenger.com/t/${edge.node.id}` };
+          return {
+            id: edge.node.id,
+            name: edge.node.name,
+            me: `https://www.messenger.com/t/${edge.node.id}`,
+          };
         });
 
         for (const edge of edges) {
